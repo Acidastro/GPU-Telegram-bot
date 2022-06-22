@@ -32,18 +32,3 @@ class DictGpu:
         except KeyError:
             return 0
         return no_lhr_dict[str(self.key)]
-
-    def gpu_mhs_lhr(self):
-        lhr_dict = {'3080ti': 118,
-                    '3080': 100,
-                    '3070ti': 82,
-                    '3070': 65,
-                    '3060ti': 60,
-                    '3060': 50,
-                    '3050': 24,
-                    }
-        try:
-            lhr_dict[str(self.key)]
-        except KeyError:
-            return 0
-        return lhr_dict[str(self.key)]
