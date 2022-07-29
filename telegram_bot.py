@@ -3,7 +3,7 @@ from product_line import ProductLine
 from telebot import types
 
 # Создаем экземпляр бота
-bot = telebot.TeleBot('5399787412:AAGasF5jdC21g2N-FpvFCVgE7dpyZI_7nls')
+bot = telebot.TeleBot('xxx')
 
 
 # Функция, обрабатывающая команду /start
