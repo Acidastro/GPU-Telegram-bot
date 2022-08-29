@@ -8,6 +8,7 @@ class DictGpu:
 
     def gpu_mhs(self):
         no_lhr_dict = {'3080': 102,
+                       '3090ti': 132,
                        '3080ti': 118,
                        '3070ti': 82,
                        '3070': 65,
@@ -26,6 +27,7 @@ class DictGpu:
                        '6700xt': 47,
                        '6600xt': 33,
                        '6600': 30,
+                       '3050': 20,
                        }
         try:
             no_lhr_dict[str(self.key)]

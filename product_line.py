@@ -1,9 +1,14 @@
 import decorators
+from dictGpu import DictGpu
 
 
 class ProductLine:
+    """
+    Основная сущеность программы.
+    Класс представляет собой строки, разбитые на подстроки для разных целей.
+    """
     USDT_EXCHANGE_RATE = 6.3  # курс доллара к юаню
-    RUB_EXCHANGE_RATE = 12.6  # курс юаня к рублю
+    RUB_EXCHANGE_RATE = 10  # курс юаня к рублю
 
     def __init__(self, line: str, lhr=False):
         self.line = line  # принятая строка
@@ -14,10 +19,13 @@ class ProductLine:
         self.__name_model_number = ''  # Номер модели видеокарты
 
     def __str__(self):
-        from dictGpu import DictGpu
+        """
+        Представление полученное на выходе программы
+        """
         if self.line:
             try:
                 return f'{self.name}, {self.price}, {DictGpu(self.name_model_number.lower()).gpu_mhs()}'
+                # return f'{self.name}, {self.price}'
             except(ValueError, TypeError):  # отлов невалидных строк
                 return self.line
         return self.line
