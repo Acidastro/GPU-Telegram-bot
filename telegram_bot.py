@@ -1,3 +1,4 @@
+# pip install pyTelegramBotAPI
 import telebot
 from product_line import ProductLine
 from telebot import types
@@ -21,7 +22,7 @@ def start(m, res=False):
 # Получение сообщений от юзера и обратный ответ
 @bot.message_handler(content_types=["text"])
 def handle_text(message):
-    # bot.send_message(message.chat.id, 'Принято')
+    bot.send_message(message.chat.id, 'Принято')
     bot.send_message(message.chat.id, transformation(message.text))
 
 

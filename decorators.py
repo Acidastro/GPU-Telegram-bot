@@ -3,8 +3,12 @@ def name_cut_price(func):
     Отрезаем от имени лишние значения (цена, количество, состояние и тп)
     """
 
-    def wrapper(line):
-        name_cut = ' '.join(line.split()[:2])
+    def wrapper(line: str):
+        if line.split()[1].lower() == 'tuf':
+            name_cut = ' '.join(line.split()[:3])
+        else:
+
+            name_cut = ' '.join(line.split()[:2])
         tmp = line[line.find(name_cut) + len(name_cut):]
         for i in tmp:
             if i.isdigit():
@@ -95,3 +99,6 @@ def price_change(func):
         return func(new_price)
 
     return wrapper
+
+
+
